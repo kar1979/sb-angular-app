@@ -1,36 +1,31 @@
 import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
+// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 
-import Button from './button.component';
+import Button from '../button/button.component';
 import Header from './header.component';
-import Page from './page.component';
-
-import * as HeaderStories from './Header.stories';
 
 export default {
-  title: 'Example/Page',
+  title: 'Example/Header',
   component: Header,
   decorators: [
     moduleMetadata({
-      declarations: [Button, Header],
+      declarations: [Button],
       imports: [CommonModule],
     }),
   ],
 } as Meta;
 
-const Template: Story<Page> = (args: Page) => ({
-  component: Page,
+const Template: Story<Header> = (args: Header) => ({
+  component: Header,
   props: args,
 });
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
-  ...HeaderStories.LoggedIn.args,
+  user: {},
 };
 
 export const LoggedOut = Template.bind({});
-LoggedOut.args = {
-  ...HeaderStories.LoggedOut.args,
-};
+LoggedOut.args = {};

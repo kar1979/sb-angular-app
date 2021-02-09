@@ -15,14 +15,15 @@ const Template: Story<Button> = (args: Button) => ({
   props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Primar = Template.bind({});
+Primar.args = {
   primary: true,
-  label: 'Button',
+  label: 'Click',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+  size: 'small',
   label: 'Button',
 };
 
